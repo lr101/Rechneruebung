@@ -1,0 +1,19 @@
+INDEX VERSION 1.131+D:\lukas\Documents\GIT\Uni\EigeneGit\Semester2\Rechneruebung\.metadata\.plugins\org.eclipse.jdt.core
+442674427.index
+1762136008.index
+48962355.index
+3971867357.index
+2790001510.index
+108677570.index
+3167643848.index
+3672327830.index
+1695662857.index
+1615275485.index
+2091984222.index
+3996839471.index
+1884724479.index
+1854791153.index
+2337570103.index
+1894889473.index
+1719824048.index
+865593711.index
