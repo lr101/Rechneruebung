@@ -38,7 +38,7 @@ class DeliveryTest {
 	
 	@Test
 	void returnBox3() {
-		Cardbox<Pizza> b2 = new Cardbox<>(10, new Pizza("TestPizza2"));
+		Cardbox<Pizza> b2 = new Cardbox<>(10, new Pizza("Test Pizza2"));
 		Address address2 = new Address("202");
 		del.addBox(b2, address2);
 		del.addBox(b, address);
