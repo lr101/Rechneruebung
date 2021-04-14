@@ -15,7 +15,5 @@ class CardboxTest {
 		assertEquals(-1, c1.compareTo(c2), 0.00000001);//c1 smaller than c2
 		assertEquals(0, c1.compareTo(c1), 0.00000001); //c1 euqally big as c1
 	}
-	
-	
 
 }
