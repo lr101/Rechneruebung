@@ -4,8 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.Map;
 
-import org.junit.jupiter.api.BeforeEach;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.*;
 
 public abstract class MapTest {
 
@@ -37,7 +36,7 @@ public abstract class MapTest {
      commonTestMap.put(2, "Zwei");
    }
    
-   @Test 
+   @Test
    void commonTestDictionary() {
      assertNotNull(commonTestMap);
      assertEquals(7, commonTestMap.size());
