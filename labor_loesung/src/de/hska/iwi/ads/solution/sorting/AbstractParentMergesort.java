@@ -2,9 +2,9 @@ package de.hska.iwi.ads.solution.sorting;
 
 import de.hska.iwi.ads.sorting.AbstractMergesort;
 
-abstract class AbstractParentMergesort extends AbstractMergesort {
+abstract class AbstractParentMergesort<E extends Comparable<E>> extends AbstractMergesort<E> {
     @Override
-    public void mergesort(Comparable[] a, int left, int right) {
+    public void mergesort(E[] a, int left, int right) {
         if (left < right) {
             int m = (left + right) / 2;
             mergesort(a, left, m);
@@ -13,5 +13,5 @@ abstract class AbstractParentMergesort extends AbstractMergesort {
         }
     }
 
-    protected abstract void verschmelzen(Comparable[] a, int left, int m, int right);
+    protected abstract void verschmelzen(E[] a, int left, int m, int right);
 }

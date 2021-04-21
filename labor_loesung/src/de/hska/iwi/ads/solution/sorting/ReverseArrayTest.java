@@ -4,12 +4,11 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class ReverseArrayTest {
-
-    private ReverseArray rev = new ReverseArray();
+class ReverseArrayTest {
 
     @Test
     void testIntegerReverse1() {
+        ReverseArray<Integer> rev = new ReverseArray<>();
         Integer[] a = {0, 1, 2, 3, 4, 5};
         Integer[] b = {5, 4, 3, 2, 1, 0};
         rev.reverse(a,0, 5);
@@ -18,6 +17,7 @@ public class ReverseArrayTest {
 
     @Test
     void testStringReverse1() {
+        ReverseArray<String> rev = new ReverseArray<>();
         String[] a = {"a", "b", "c", "d", "e"};
         String[] b = {"e", "d", "c", "b", "a"};
         rev.reverse(a,0, 4);
@@ -26,6 +26,7 @@ public class ReverseArrayTest {
 
     @Test
     void testIntegerTwiceReverse() {
+        ReverseArray<Integer> rev = new ReverseArray<>();
         Integer[] a = {0, 1, 2, 3, 4, 5, 1938, 9837, 23, 7523, 1212};
         rev.reverse(a,0, 10);
         rev.reverse(a, 0, 10);
@@ -34,6 +35,7 @@ public class ReverseArrayTest {
 
     @Test
     void testStringReverse2() {
+        ReverseArray<String> rev = new ReverseArray<>();
         String[] a = {"utah", "to", "roads", "public", "over", "moving", "car", "black" ,"a"};
         String[] b = {"a", "black", "car", "moving", "over", "public", "roads", "to", "utah"};
         rev.reverse(a,0, 8);
@@ -42,6 +44,7 @@ public class ReverseArrayTest {
 
     @Test
     void testIntegerAndID1 () {
+        ReverseArray<IntegerAndID> rev = new ReverseArray<>();
         IntegerAndID number1 = new IntegerAndID(1, 1);
         IntegerAndID number2 = new IntegerAndID(2, 2);
         IntegerAndID number3 = new IntegerAndID(2, 3);
@@ -55,6 +58,7 @@ public class ReverseArrayTest {
 
     @Test
     void testIntegerPartlyReverse1() {
+        ReverseArray<Integer> rev = new ReverseArray<>();
         Integer[] a = {0, 1, 2, 3, 4, 5};
         Integer[] b = {4, 3, 2, 1, 0, 5};
         rev.reverse(a,0, 4);
@@ -63,6 +67,7 @@ public class ReverseArrayTest {
 
     @Test
     void testIntegerPartlyReverse2() {
+        ReverseArray<Integer> rev = new ReverseArray<>();
         Integer[] a = {0, 1, 2, 3, 4, 5};
         Integer[] b = {0, 5, 4, 3, 2, 1};
         rev.reverse(a,  1, 5);
@@ -71,6 +76,7 @@ public class ReverseArrayTest {
 
     @Test
     void testIntegerPartlyReverse3() {
+        ReverseArray<Integer> rev = new ReverseArray<>();
         Integer[] a = {0, 1, 2, 3, 4, 5};
         Integer[] b = {0, 4, 3, 2, 1, 5};
         rev.reverse(a,1, 4);

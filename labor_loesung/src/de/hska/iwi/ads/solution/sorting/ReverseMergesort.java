@@ -1,13 +1,13 @@
 package de.hska.iwi.ads.solution.sorting;
 
-public class ReverseMergesort extends AbstractParentMergesort {
+public class ReverseMergesort<E extends Comparable<E>> extends AbstractParentMergesort<E> {
 
-
-    protected void verschmelzen (Comparable[] a, int left, int m, int right) {
+    @Override
+    protected void verschmelzen (E[] a, int left, int m, int right) {
         int l = left;
         int r = right;
 
-        ReverseArray rev = new ReverseArray();
+        ReverseArray<E> rev = new ReverseArray<>();
         rev.reverse(a, m + 1, right);
         for (int i = left; i <= right; i++) {
             if ( a[l].compareTo(a[r]) <= 0) {

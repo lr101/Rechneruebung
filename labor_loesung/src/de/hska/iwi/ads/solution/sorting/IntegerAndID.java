@@ -6,16 +6,16 @@ public class IntegerAndID implements Comparable<IntegerAndID> {
     private int id;
 
 
-    public IntegerAndID (int value, int id) {
+    IntegerAndID (int value, int id) {
         this.value = value;
         this.id = id;
     }
 
-    public int getId() {
+    int getId() {
         return id;
     }
 
-    public int getValue() {
+    int getValue() {
         return value;
     }
 
