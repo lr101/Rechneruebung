@@ -4,11 +4,15 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MergesortTest {
+abstract class AbstractMergesortTest {
+
+    protected abstract AbstractParentMergesort createMergesort();
+
+    private AbstractParentMergesort m = createMergesort();
 
     @Test
     void testIntegerSort1() {
-        Mergesort<Integer> m = new Mergesort<>();
+
         Integer [] a = {11, 10, 9, 7, 4, 2, 0};
         Integer [] ergebnis = {0, 2, 4, 7, 9, 10, 11};
         m.sort(a);
@@ -18,7 +22,6 @@ public class MergesortTest {
 
     @Test
     void testStringSort1() {
-        Mergesort<String> m = new Mergesort<>();
         String [] a = {"c", "e", "g", "a"};
         String [] ergebnis = {"a", "c", "e", "g"};
         m.sort(a);
@@ -28,7 +31,6 @@ public class MergesortTest {
 
     @Test
     void testIntegerSort2() {
-        Mergesort<Integer> m = new Mergesort<>();
         Integer [] a = {-10, 4, 7, 19, 0 ,23, 5, 19, 17, 100, -4};
         Integer [] ergebnis = {-10, -4, 0, 4, 5, 7, 17, 19, 19, 23, 100};
         m.sort(a);
@@ -38,7 +40,6 @@ public class MergesortTest {
 
     @Test
     void testStringSort2() {
-        Mergesort<String> m = new Mergesort<>();
         String [] a = {"black", "over", "a", "utah", "to", "car", "public", "roads", "moving"};
         String [] ergebnis = {"a", "black", "car", "moving", "over", "public", "roads", "to", "utah"};
         m.sort(a);
@@ -48,7 +49,6 @@ public class MergesortTest {
 
     @Test
     void testIntegerSortEmpty() {
-        Mergesort<Integer> m = new Mergesort<>();
         Integer [] a = {};
         Integer [] ergebnis = {};
         m.sort(a);
@@ -58,7 +58,6 @@ public class MergesortTest {
 
     @Test
     void testStringSortEmpty() {
-        Mergesort<String> m = new Mergesort<>();
         String [] a = {};
         String [] ergebnis = {};
         m.sort(a);
@@ -68,7 +67,6 @@ public class MergesortTest {
 
     @Test
     void testIntegerSortOneElement() {
-        Mergesort<Integer> m = new Mergesort<>();
         Integer [] a = {0};
         Integer [] ergebnis = {0};
         m.sort(a);
@@ -78,7 +76,6 @@ public class MergesortTest {
 
     @Test
     void testStringSortOneElement() {
-        Mergesort<String> m = new Mergesort<>();
         String [] a = {"OneString"};
         String [] ergebnis = {"OneString"};
         m.sort(a);
@@ -93,7 +90,6 @@ public class MergesortTest {
         IntegerAndID number3 = new IntegerAndID(2, 3);
         IntegerAndID number4 = new IntegerAndID(1, 4);
         IntegerAndID number5 = new IntegerAndID(2, 5);
-        Mergesort<IntegerAndID> m = new Mergesort<IntegerAndID>();
         IntegerAndID [] a = {number1, number2, number3, number4, number5};
         IntegerAndID [] ergebnis = {number1, number4, number2, number3,number5};
         m.sort(a);
@@ -115,7 +111,6 @@ public class MergesortTest {
         IntegerAndID number3 = new IntegerAndID(1, 3);
         IntegerAndID number4 = new IntegerAndID(1, 4);
         IntegerAndID number5 = new IntegerAndID(1, 5);
-        Mergesort<IntegerAndID> m = new Mergesort<IntegerAndID>();
         IntegerAndID [] a = {number1, number2, number3, number4, number5};
         IntegerAndID [] ergebnis = {number1, number4, number2, number3,number5};
         m.sort(a);
