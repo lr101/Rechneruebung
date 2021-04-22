@@ -1,19 +1,12 @@
 package de.hska.iwi.ads.solution.sorting;
 
 
-public class ReverseMergesortTest extends AbstractMergesortTest {
-    @Override
-    protected ReverseMergesort<Integer> createMergesortInteger() {
-        return new ReverseMergesort<>();
-    }
+import de.hska.iwi.ads.sorting.Sort;
+
+class ReverseMergesortTest extends AbstractMergesortTest {
 
     @Override
-    protected ReverseMergesort<String> createMergesortString() {
-        return new ReverseMergesort<>();
-    }
-
-    @Override
-    protected ReverseMergesort<IntegerAndID> createMergesortIntegerAndID() {
+    <E extends Comparable<E>> Sort<E> createSort() {
         return new ReverseMergesort<>();
     }
 }

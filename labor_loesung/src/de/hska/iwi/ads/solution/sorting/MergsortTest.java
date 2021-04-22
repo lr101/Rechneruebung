@@ -1,21 +1,11 @@
 package de.hska.iwi.ads.solution.sorting;
 
-public class MergsortTest extends AbstractMergesortTest {
+import de.hska.iwi.ads.sorting.Sort;
 
-
-
-    @Override
-    protected Mergesort<Integer> createMergesortInteger() {
-        return new Mergesort<>();
-    }
+class MergsortTest extends AbstractMergesortTest {
 
     @Override
-    protected Mergesort<String> createMergesortString() {
-        return new Mergesort<>();
-    }
-
-    @Override
-    protected Mergesort<IntegerAndID> createMergesortIntegerAndID() {
+    <E extends Comparable<E>> Sort<E> createSort() {
         return new Mergesort<>();
     }
 }

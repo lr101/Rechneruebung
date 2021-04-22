@@ -7,15 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 abstract class AbstractMergesortTest {
 
-    protected abstract Sort<Integer> createMergesortInteger();
-    protected abstract Sort<String> createMergesortString();
-    protected abstract Sort<IntegerAndID> createMergesortIntegerAndID();
-
-
+    abstract <E extends Comparable<E>> Sort<E> createSort();
 
     @Test
     void testIntegerSort1() {
-        Sort<Integer> m = createMergesortInteger();
+        Sort<Integer> m = createSort();
         Integer [] a = {11, 10, 9, 7, 4, 2, 0};
         Integer [] ergebnis = {0, 2, 4, 7, 9, 10, 11};
         m.sort(a);
@@ -25,7 +21,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testStringSort1() {
-        Sort<String> m = createMergesortString();
+        Sort<String> m = createSort();
         String [] a = {"c", "e", "g", "a"};
         String [] ergebnis = {"a", "c", "e", "g"};
         m.sort(a);
@@ -35,7 +31,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testIntegerSort2() {
-        Sort<Integer> m = createMergesortInteger();
+        Sort<Integer> m = createSort();
         Integer [] a = {-10, 4, 7, 19, 0 ,23, 5, 19, 17, 100, -4};
         Integer [] ergebnis = {-10, -4, 0, 4, 5, 7, 17, 19, 19, 23, 100};
         m.sort(a);
@@ -45,7 +41,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testStringSort2() {
-        Sort<String> m = createMergesortString();
+        Sort<String> m = createSort();
         String [] a = {"black", "over", "a", "utah", "to", "car", "public", "roads", "moving"};
         String [] ergebnis = {"a", "black", "car", "moving", "over", "public", "roads", "to", "utah"};
         m.sort(a);
@@ -55,7 +51,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testIntegerSortEmpty() {
-        Sort<Integer> m = createMergesortInteger();
+        Sort<Integer> m = createSort();
         Integer [] a = {};
         Integer [] ergebnis = {};
         m.sort(a);
@@ -65,7 +61,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testStringSortEmpty() {
-        Sort<String> m = createMergesortString();
+        Sort<String> m = createSort();
         String [] a = {};
         String [] ergebnis = {};
         m.sort(a);
@@ -75,7 +71,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testIntegerSortOneElement() {
-        Sort<Integer> m = createMergesortInteger();
+        Sort<Integer> m = createSort();
         Integer [] a = {0};
         Integer [] ergebnis = {0};
         m.sort(a);
@@ -85,7 +81,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testStringSortOneElement() {
-        Sort<String> m = createMergesortString();
+        Sort<String> m = createSort();
         String [] a = {"OneString"};
         String [] ergebnis = {"OneString"};
         m.sort(a);
@@ -95,7 +91,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testIntegerAndIDSortStable1() {
-        Sort<IntegerAndID> m = createMergesortIntegerAndID();
+        Sort<IntegerAndID> m = createSort();
         IntegerAndID number1 = new IntegerAndID(1, 1);
         IntegerAndID number2 = new IntegerAndID(2, 2);
         IntegerAndID number3 = new IntegerAndID(2, 3);
@@ -123,7 +119,7 @@ abstract class AbstractMergesortTest {
      */
     @Test
     void testIntegerAndIDSortStable2() {
-        Sort<IntegerAndID> m = createMergesortIntegerAndID();
+        Sort<IntegerAndID> m = createSort();
         IntegerAndID number1 = new IntegerAndID(1, 1);
         IntegerAndID number2 = new IntegerAndID(1, 2);
         IntegerAndID number3 = new IntegerAndID(1, 3);
@@ -143,7 +139,7 @@ abstract class AbstractMergesortTest {
 
     @Test
     void testIntegerZeitaufwand () {
-        Sort<Integer> m = createMergesortInteger();
+        Sort<Integer> m = createSort();
         Integer[] a = new Integer[5000000]; //5.000.000
         Arrays.fill(a, 0);
         m.sort(a);
