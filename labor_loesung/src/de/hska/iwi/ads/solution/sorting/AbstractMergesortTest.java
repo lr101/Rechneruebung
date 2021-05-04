@@ -1,58 +1,24 @@
 package de.hska.iwi.ads.solution.sorting;
-import static org.junit.jupiter.api.Assertions.*;
 
-import java.time.LocalDate;
-import java.time.Month;
-import java.time.chrono.ChronoLocalDate;
-
-import de.hska.iwi.ads.interfaces.Vector;
-import de.hska.iwi.ads.search.Search;
 import de.hska.iwi.ads.sorting.Sort;
 import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import static org.junit.jupiter.api.Assertions.*;
 
-public abstract class AbstractMergesortTest {
+abstract class AbstractMergesortTest {
 
-    public abstract <E extends Comparable<E>> Sort<E> createMergesort();
-  
- 
+    abstract <E extends Comparable<E>> Sort<E> createSort();
+
     @Test
     void testIntegerSort1() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {11, 10, 9, 7, 4, 2, 0};
-        Integer[] ergebnis = {0, 2, 4, 7, 9, 10, 11};
-        sortObject.sort(a);
+        Sort<Integer> m = createSort();
+        Integer [] a = {11, 10, 9, 7, 4, 2, 0};
+        Integer [] ergebnis = {0, 2, 4, 7, 9, 10, 11};
+        m.sort(a);
+
         assertArrayEquals(ergebnis, a);
     }
 
-    @Test
-    void testIntegerSort2() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {8, 7, 6, 5, 4, 3, 2, 1};
-        Integer[] ergebnis = {1, 2, 3, 4, 5, 6, 7, 8};
-        sortObject.sort(a);
-        assertArrayEquals(a, ergebnis);
-
-    }
-
-    @Test
-    void testIntegerPosition1() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {2, 0, 4, 7, 9, 10, 11};
-        sortObject.sort(a);
-        assertEquals(2, a[1]);
-    }
-
-    @Test
-    void testIntegerPosition2() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {2, 2, 2, 2, 2, 2, 1};
-        sortObject.sort(a);
-        assertEquals(1, a[0]);
-    }
-
-    
-
-  
     @Test
     void testStringSort1() {
         Sort<String> m = createSort();
@@ -64,60 +30,66 @@ public abstract class AbstractMergesortTest {
     }
 
     @Test
+    void testIntegerSort2() {
+        Sort<Integer> m = createSort();
+        Integer [] a = {-10, 4, 7, 19, 0 ,23, 5, 19, 17, 100, -4};
+        Integer [] ergebnis = {-10, -4, 0, 4, 5, 7, 17, 19, 19, 23, 100};
+        m.sort(a);
+
+        assertArrayEquals(ergebnis, a);
+    }
+
+    @Test
     void testStringSort2() {
-        Sort<String> sortObject = createMergesort();
-        String[] a = {"black", "over", "a", "utah", "to", "car", "public", "roads", "moving"};
-        String[] ergebnis = {"a", "black", "car", "moving", "over", "public", "roads", "to", "utah"};
-        sortObject.sort(a);
+        Sort<String> m = createSort();
+        String [] a = {"black", "over", "a", "utah", "to", "car", "public", "roads", "moving"};
+        String [] ergebnis = {"a", "black", "car", "moving", "over", "public", "roads", "to", "utah"};
+        m.sort(a);
+
         assertArrayEquals(ergebnis, a);
     }
 
     @Test
     void testIntegerSortEmpty() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {};
-        Integer[] ergebnis = {};
-        sortObject.sort(a);
+        Sort<Integer> m = createSort();
+        Integer [] a = {};
+        Integer [] ergebnis = {};
+        m.sort(a);
+
         assertArrayEquals(ergebnis, a);
     }
 
     @Test
     void testStringSortEmpty() {
-        Sort<String> sortObject = createMergesort();
-        String[] a = {};
-        String[] ergebnis = {};
-        sortObject.sort(a);
+        Sort<String> m = createSort();
+        String [] a = {};
+        String [] ergebnis = {};
+        m.sort(a);
+
         assertArrayEquals(ergebnis, a);
     }
 
     @Test
     void testIntegerSortOneElement() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = {0};
-        Integer[] ergebnis = {0};
-        sortObject.sort(a);
+        Sort<Integer> m = createSort();
+        Integer [] a = {0};
+        Integer [] ergebnis = {0};
+        m.sort(a);
+
         assertArrayEquals(ergebnis, a);
     }
 
     @Test
     void testStringSortOneElement() {
+        Sort<String> m = createSort();
+        String [] a = {"OneString"};
+        String [] ergebnis = {"OneString"};
+        m.sort(a);
 
-        Sort<String> sortObject = createMergesort();
-        String[] a = {"OneString"};
-        String[] ergebnis = {"OneString"};
-        sortObject.sort(a);
         assertArrayEquals(ergebnis, a);
     }
 
     @Test
-    void testIntegerZeitaufwand() {
-        Sort<Integer> sortObject = createMergesort();
-        Integer[] a = new Integer[100000];
-        java.util.Arrays.fill(a, 0);
-        sortObject.sort(a);
-
-    }
-  
     void testIntegerAndIDSortStable1() {
         Sort<IntegerAndID> m = createSort();
         IntegerAndID number1 = new IntegerAndID(1, 1);
@@ -135,6 +107,8 @@ public abstract class AbstractMergesortTest {
         assertEquals(2, a[2].getId());
         assertEquals(3, a[3].getId());
         assertEquals(5, a[4].getId());
+
+
     }
 
     /*
@@ -163,4 +137,11 @@ public abstract class AbstractMergesortTest {
         assertEquals(5, a[4].getId());
     }
 
+    @Test
+    void testIntegerZeitaufwand () {
+        Sort<Integer> m = createSort();
+        Integer[] a = new Integer[5000000]; //5.000.000
+        Arrays.fill(a, 0);
+        m.sort(a);
+    }
 }
