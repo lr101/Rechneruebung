@@ -1,6 +1,4 @@
 package de.hska.iwi.ads.solution.sorting;
-
-
 import de.hska.iwi.ads.sorting.Sort;
 
 class ReverseMergesortTest extends AbstractMergesortTest {
@@ -10,3 +8,4 @@ class ReverseMergesortTest extends AbstractMergesortTest {
         return new ReverseMergesort<>();
     }
 }
+

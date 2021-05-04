@@ -21,42 +21,16 @@ public class BinarySearch<E extends Comparable<E>> implements Search<E> {
     }
 
     @Override
-    public int search (E[] a, E key, int left, int right){
-        if (key.compareTo(a[left]) < 0) {
-            return left - 1;
-        } else if (key.compareTo(a[right]) > 0) {
-            return right + 1;
-        } else {
-            return binarySearch(a, key, left, right);
-        }
-    }
 
-
-    /*
-    Iterative Version der modifizierten Binearsuche:
-
-    @Override
     public int search(E[] a, E key, int left, int right) {
-        //Vorbedingung
+        int i;
         if (key.compareTo(a[left]) < 0) {
-            return left - 1;
+            i = left - 1;
         } else if (key.compareTo(a[right]) > 0) {
-            return right + 1;
+            i = right + 1;
+        } else {
+            i = this.binarySearch(a, key, left, right);
         }
-        //Binärsuche
-        while (left > right) {
-            int center  = (left + right) / 2;
-
-            if (key.compareTo(a[center]) == 0) {
-                right = center - 1;
-            } else if (key.compareTo(a[center]) < 0){
-                right = center - 1;
-            } else {
-                left = center + 1;
-            }
-        }
-        //Nachbedingung
-        return  (key.compareTo(a[right]) > 0 && key.compareTo(a[left]) <= 0) ? left : right;
+        return i;
     }
-     */
 }
