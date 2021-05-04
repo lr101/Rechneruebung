@@ -1,7 +1,5 @@
 package de.hska.iwi.ads.solution.sorting;
 
-import de.hska.iwi.ads.sorting.AbstractMergesort;
-
 public class Mergesort<E extends Comparable<E>> extends AbstractParentMergesort<E> {
 
     @Override

@@ -6,13 +6,11 @@ public class ReverseArray<E extends Comparable<E>> implements Reverse<E> {
 
     @Override
     public void reverse(E[] a, int from, int to) {
-        E b;
-        for (; from <= to; from++, to--) {
-            b = a[from];
-            a[from] = a[to];
-            a[to] = b;
+        int r = to;
+        for (int l = from; l < r; l++, r--) {
+            E b = a[l];
+            a[l] = a[r];
+            a[r] = b;
         }
     }
 }
-
-
