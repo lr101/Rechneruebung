@@ -21,7 +21,7 @@ public class BinarySearch<E extends Comparable<E>> implements Search<E> {
     }
 
     @Override
-    public int search (E[] a, E key, int left, int right){
+    public int search(E[] a, E key, int left, int right){
         if (key.compareTo(a[left]) < 0) {
             return left - 1;
         } else if (key.compareTo(a[right]) > 0) {
