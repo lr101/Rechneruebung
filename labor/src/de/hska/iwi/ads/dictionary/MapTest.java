@@ -74,7 +74,7 @@ public abstract class MapTest {
   void testSize2() {
     Map<Integer, String> map = createMap();
     
-    map.put(5, "F�nf");
+    map.put(5, "Fünf");
     map.put(3, "Drei");
     map.put(1, "Eins");
     map.put(9, "Neun");
