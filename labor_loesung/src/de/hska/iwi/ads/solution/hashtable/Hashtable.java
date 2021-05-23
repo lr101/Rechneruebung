@@ -13,6 +13,7 @@ public class Hashtable<K extends Comparable<K>, V> extends AbstractHashMap<K,V> 
         K key = (K) o;
         if (key == null) throw new NullPointerException();
         Entry<K,V> returnValue = getEntry(key);
+
         return returnValue == null ? null : returnValue.getValue();
     }
 
