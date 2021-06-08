@@ -21,7 +21,7 @@ public abstract class MapTest {
   */
  public abstract <K extends Comparable<K>, V> Map<K,V> createMap();
  
-   private Map<Integer, String> commonTestMap;
+  private Map<Integer, String> commonTestMap;
    
    @BeforeEach
    void setUp() {
@@ -93,22 +93,22 @@ public abstract class MapTest {
   @Test
   void testPut2() {
     commonTestMap.put(9, "Neun");
-    commonTestMap.put(5, "F�nf");
+    commonTestMap.put(5, "Fünf");
     assertEquals(9, commonTestMap.size());    
     assertEquals("Neun", commonTestMap.get(9));
-    assertEquals("F�nf", commonTestMap.get(5));
+    assertEquals("Fünf", commonTestMap.get(5));
   }
   
   @Test
   void testPut3() {
     commonTestMap.put(9, "Neun");
-    commonTestMap.put(5, "F�nf");
+    commonTestMap.put(5, "Fünf");
     commonTestMap.put(2, "Two");
     commonTestMap.put(9, "Neun");
     
     assertEquals(9, commonTestMap.size());    
     assertEquals("Neun", commonTestMap.get(9));
-    assertEquals("F�nf", commonTestMap.get(5));
+    assertEquals("Fünf", commonTestMap.get(5));
   }
   
   @Test

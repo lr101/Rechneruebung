@@ -2,6 +2,7 @@ package de.hska.iwi.ads.solution.search;
 
 import de.hska.iwi.ads.search.Search;
 import de.hska.iwi.ads.search.SearchTest;
+import org.junit.jupiter.api.Test;
 
 public class BinarySearchTest extends SearchTest  {
 
@@ -9,4 +10,5 @@ public class BinarySearchTest extends SearchTest  {
     public <E extends Comparable<E>> Search<E> createSearch() {
         return new BinarySearch<>();
     }
+
 }
