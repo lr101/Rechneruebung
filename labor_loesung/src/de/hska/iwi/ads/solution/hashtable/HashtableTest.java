@@ -9,7 +9,7 @@ public class HashtableTest extends MapTest{
 
     @Override
     public <K extends Comparable<K>, V> Map<K, V> createMap() {
-        return new Hashtable<>();
+        return new Hashtable<>(100);
     }
 }
 

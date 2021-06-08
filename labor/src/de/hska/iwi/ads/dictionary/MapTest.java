@@ -61,7 +61,7 @@ public abstract class MapTest {
   void testSize1() {
     Map<Integer, String> dictionary = createMap();
     
-    dictionary.put(5, "F�nf");
+    dictionary.put(5, "Fünf");
     dictionary.put(3, "Drei");
     dictionary.put(7, "Vier");
     dictionary.put(11, "Elf");
