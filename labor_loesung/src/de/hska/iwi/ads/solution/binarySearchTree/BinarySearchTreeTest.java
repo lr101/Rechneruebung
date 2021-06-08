@@ -1,4 +1,4 @@
-package de.hska.iwi.ads.solution.binarySearch;
+package de.hska.iwi.ads.solution.binarySearchTree;
 
 import de.hska.iwi.ads.dictionary.MapTest;
 import org.junit.jupiter.api.Test;

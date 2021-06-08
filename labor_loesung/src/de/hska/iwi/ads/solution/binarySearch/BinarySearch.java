@@ -1,4 +1,4 @@
-package de.hska.iwi.ads.solution.search;
+package de.hska.iwi.ads.solution.binarySearch;
 
 import de.hska.iwi.ads.search.Search;
 
